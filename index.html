@@ -1,30 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Demo</title>
+    <!--! jQuery -->
+    <!--подключение online -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+    <!--подключение offline -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <!--! LESS -->
+    <!--подключение online -->
+    <!-- <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <script src="//cdn.jsdelivr.net/npm/less@3.13"></script> -->
+    <!--подключение offline -->
+    <!-- файл, в котором будут хранится стили, написанные на LESS -->
+    <link href="less/styles.less" type="text/css" rel="stylesheet/less" />
+    <!--привязываем файл с LESS к странице HTML -->
+    <script src="less.min.js" type="text/javascript"></script>
+
 </head>
 
-<body class="body">
-    <div class="block1">
-        <p class="block1_paragraph"></p>
-    </div>
-    <p class="block"></p>
-    <div id="idname"></div>
-    <p class=""></p>
-    <p class="classname">Voluptate aliquam debitis dolores occaecati voluptatum sunt saepe nesciunt ex. Possimus et
-        deserunt occaecati iure in. Exercitationem quia deleniti molestias quod dolores suscipit. Dolores eaque in
-        libero quia excepturi reprehenderit. Omnis modi iusto labore officiis voluptatem.</p>
-    <p id=""></p>
-    <p id="idname"></p>
-    <ul class="merge">
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+
+    <script>
+        $(document).ready(function () {
+            $("a").click(function (event) {
+                alert("As you can see, the link no longer took you to jquery.com");
+                // отключение действия по умолчанию
+                event.preventDefault();
+                // медленно скрываем ссылку
+                $(this).hide("slow");
+            });
+        });
+    </script>
 </body>
 
 </html>
