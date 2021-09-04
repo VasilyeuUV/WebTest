@@ -6,37 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo</title>
+    <!--! CSS -->
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
     <!--! jQuery -->
-    <!--подключение online -->
+    <!--* подключение online -->
     <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-    <!--подключение offline -->
-    <script src="jquery-3.6.0.min.js"></script>
+    <!--* подключение offline -->
+    <script src="jquery/jquery-3.6.0.min.js"></script>
+    <script src="jquery/main.js"></script>
     <!--! LESS -->
-    <!--подключение online -->
+    <!--* подключение online -->
     <!-- <link rel="stylesheet/less" type="text/css" href="styles.less" />
     <script src="//cdn.jsdelivr.net/npm/less@3.13"></script> -->
-    <!--подключение offline -->
-    <!-- файл, в котором будут хранится стили, написанные на LESS -->
-    <link href="less/styles.less" type="text/css" rel="stylesheet/less" />
-    <!--привязываем файл с LESS к странице HTML -->
-    <script src="less.min.js" type="text/javascript"></script>
+    <!--* подключение offline -->
+    <!--* файл, в котором будут хранится стили, написанные на LESS -->
+    <!-- <link href="less/styles.less" type="text/css" rel="stylesheet/less" /> -->
+    <!--* привязываем файл с LESS к странице HTML -->
+    <script src="less/less.min.js" type="text/javascript"></script>
 
 </head>
 
 <body>
-    <a href="http://jquery.com/">jQuery</a>
 
-    <script>
-        $(document).ready(function () {
-            $("a").click(function (event) {
-                alert("As you can see, the link no longer took you to jquery.com");
-                // отключение действия по умолчанию
-                event.preventDefault();
-                // медленно скрываем ссылку
-                $(this).hide("slow");
-            });
-        });
-    </script>
+    <div id="body__div-calc"></div>
+
 </body>
 
 </html>
