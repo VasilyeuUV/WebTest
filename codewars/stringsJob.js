@@ -134,15 +134,39 @@ const nicknameGenerator2 = name => (name.match(/^..[aeiou]?.(?!$)/gi) || ['Error
 
 //_______________________________________________________________________________________
 // Valid string (может ли быть сформировано word из слов, содержащихся в dictionary)
-// const validWord = function (dictionary, word) {
-//     // dictionary.forEach(el => {
-//     //     word = word.replace(el, "");
-//     // });
 
-//     return dictionary.every(el => word.includes(el));
+// const validWord = function (dictionary, word) {
+//     let res = true;
+//     for (let index = 0; index < dictionary.length; index++) {
+//         const element = dictionary[index];
+//         if (word.indexOf(element) < 0) {
+//             res = false;
+//             break;
+//         }
+//     }
+//     return res;
 // };
 
-const validWord = (dictionary, word) => dictionary.every(el => word.includes(el));
+const validWord = function (dictionary, word) {
+    if (dictionary.length === 0) {
+        return false;
+    }
+
+    let unused = [];
+    while (dictionary.length > 0) {
+        let el = dictionary.shift();
+
+        if (word.indexOf(el) < 0) {
+            unused.push(el);
+        }
+        word = word.replace(el, "");
+    }
+    console.log(word.length + " - " + unused.length);
+    return word.length === 0 ? true : unused.length === 0;
+};
+
+//const validWord = (dictionary, word) => dictionary.some(el => word.replace(el, "").length == 0);
+
 
 
 
@@ -152,4 +176,4 @@ const validWord = (dictionary, word) => dictionary.every(el => word.includes(el)
 
 //####################################################################################
 
-console.log(validWord(['Star', 'Code', 'Wars'], 'CodeStarsWar'));
+console.log(validWord(['ab', 'a', 'bc'], 'abc'));   // true
